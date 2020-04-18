@@ -1,0 +1,9 @@
+<div class="header">Click on an Exercise-Button to see the Exercise</div>
+<div>
+  <button *ngFor="let exercise of exercises" mat-raised-button color="primary" (click)="currentExercise = exercise">
+    {{exercise.name}}
+  </button>
+  <div>
+    <app-exercise *ngIf="currentExercise" [currentExercise]="currentExercise"></app-exercise>
+  </div>
+</div>

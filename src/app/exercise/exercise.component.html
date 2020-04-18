@@ -1,0 +1,24 @@
+<div class="header" *ngIf="exercise.infoUrl">Info</div>
+<pre>{{exercise.info}}</pre>
+<p><a [href]="exercise.infoUrl" target="_blank">{{exercise.infoUrlName}}</a></p>
+<p *ngFor="let url of exercise.infoUrls; let i = index">
+  <a [href]="exercise.infoUrls[i]" target="_blank">{{exercise.infoUrlNames[i]}}</a>
+</p>
+
+<div class="header">{{exercise.question}}</div>
+<pre>{{exercise.code}}</pre>
+<button mat-raised-button color="primary" (click)="toggleSolution()">
+  {{showSolution ? 'Hide' : 'Show'}} Solution
+</button>
+<button mat-raised-button color="primary" (click)="runExercise()">Run Exercise</button>
+
+<div class="header">Solution</div>
+<div *ngIf="showSolution">
+  <pre>{{exercise.solution}}</pre>
+  <a *ngIf="exercise.solutionUrl" [href]="exercise.solutionUrl" target="_blank">Link to Solution</a>
+</div>
+
+<div class="header">Run Log</div>
+<pre>
+<div *ngFor="let log of logs">{{log}}</div>
+</pre>

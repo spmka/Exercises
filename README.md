@@ -1,2 +1,0 @@
-# Exercises
-Created with CodeSandbox
