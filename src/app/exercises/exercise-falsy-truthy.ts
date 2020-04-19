@@ -10,7 +10,7 @@ export class ExerciseFalsyTruthy extends Exercise {
     this.info = `falsy = false, 0, "", null, undefined, NaN
 Truthy = ! falsy
 `;
-    this.infoUrl = null;
+    this.infoUrl = 'https://developer.mozilla.org/en-US/docs/Glossary/Truthy';
     this.infoUrlName = null;
     this.code = `public run() {
   let x = {
@@ -22,6 +22,10 @@ Truthy = ! falsy
   this.doLog('!undefined          -> ' + !undefined);
   this.doLog('!null               -> ' + !null);
   this.doLog('!0                  -> ' + !0);
+  this.doLog('![]                 -> ' + ![]);
+  this.doLog('!{}                 -> ' + !{});
+  this.doLog('[] == 0             -> ' + ([] == 0));
+  this.doLog('{} == 0             -> ' + ({} == 0));
   this.doLog('!x                  -> ' + !x);
   this.doLog('!!x                 -> ' + !!x);
   this.doLog('x.a                 -> ' + x.a);
@@ -83,6 +87,10 @@ Truthy = ! falsy
     this.doLog('!undefined          -> ' + !undefined);
     this.doLog('!null               -> ' + !null);
     this.doLog('!0                  -> ' + !0 + '        !!! Attention !!!');
+    this.doLog('![]                 -> ' + ![]);
+    this.doLog('!{}                 -> ' + !{});
+    this.doLog('[] == 0             -> ' + ([] == 0) + '        !!! Attention !!!');
+    this.doLog('{} == 0             -> ' + ({} == 0) + '        !!! Attention !!!');
     this.doLog('!x                  -> ' + !x);
     this.doLog('!!x                 -> ' + !!x);
     this.doLog('x.a                 -> ' + x.a);
